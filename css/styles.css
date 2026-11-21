@@ -757,76 +757,85 @@ body::before {
 }
 
 /* =====================================================================
-   Premium boutique theme: royal navy, champagne gold, ivory
-   (luxury advisory + fintech cards + editorial serif type)
+   Editorial + contemporary corporate theme: cream, charcoal, navy, bronze
+   An established boutique firm with a strong, organised grid.
    ===================================================================== */
-
-/* Editorial serif headings */
-h1, h2 { font-weight: 500; letter-spacing: -.012em; }
-h1 { font-weight: 500; line-height: 1.06; }
-h3 { letter-spacing: -.005em; }
-.svc-top h3, .who-card h3, .tc-checklist h3, .founder-copy h3, .step-title, .form-success h3 { font-weight: 600; letter-spacing: -.01em; }
-.svc-name, .highlights strong { font-family: var(--font-body); font-weight: 600; letter-spacing: 0; }
-.logo-text { font-weight: 600; letter-spacing: -.01em; }
-.logo-mark { font-family: var(--font-display); font-weight: 600; letter-spacing: .02em; }
-.cd-days { font-weight: 600; letter-spacing: -.01em; }
-.founder-initials { font-weight: 500; }
-
-/* Italic gold accent word instead of a highlighter */
-.hl { background: none; font-style: italic; color: var(--accent); animation: none; }
-
-/* Small caps-style labels with a thin gold rule */
-.eyebrow { letter-spacing: .2em; font-size: .72rem; }
-.eyebrow-dot { width: 22px; height: 1px; border-radius: 0; background: var(--gold); box-shadow: none; }
-
-/* Gold buttons with navy text */
-.btn-primary { background: var(--gold); color: var(--ink); }
-.btn-primary:hover { background: var(--gold-dark); color: var(--ink); box-shadow: 0 10px 24px -10px rgba(197, 164, 109, .75); }
-.btn { letter-spacing: .01em; }
-
-/* Dark luxury hero */
-.hero {
-  background:
-    radial-gradient(48rem 26rem at 88% 8%, rgba(197, 164, 109, .16), transparent 62%),
-    radial-gradient(40rem 30rem at -10% 110%, rgba(36, 52, 90, .9), transparent 60%),
-    var(--ink);
-  color: var(--on-ink);
+:root {
+  --ink: #1d2733;
+  --ink-2: #26323f;
+  --ink-3: #344252;
+  --paper: #faf8f3;
+  --paper-2: #f1eee7;
+  --card: #ffffff;
+  --rule: #dedad1;
+  --rule-strong: #b8b2a6;
+  --text: #1f2329;
+  --muted: #5a5f68;
+  --accent: #1f3a5f;
+  --accent-dark: #142a47;
+  --accent-soft: #e3e8f0;
+  --accent-tint: #f2f4f8;
+  --gold: #9c7c50;
+  --gold-dark: #7f6440;
+  --star: #c9a877;
+  --star-soft: #efe5d4;
+  --on-ink: #eef0f2;
+  --on-ink-muted: #a9b0ba;
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --radius: 2px;
+  --radius-sm: 2px;
+  --shadow: none;
+  --shadow-lg: 0 24px 48px -28px rgba(29, 39, 51, .35);
 }
-.hero h1 { color: #fbf8f2; }
-.hero .hl { color: var(--gold); }
-.hero .lead { color: var(--on-ink-muted); }
-.hero .eyebrow { color: var(--gold); }
-.hero .btn-quiet { color: var(--on-ink); text-decoration-color: rgba(197, 164, 109, .6); }
-.hero .btn-quiet:hover { color: var(--gold); text-decoration-color: var(--gold); }
-.hero .hero-assurances { color: var(--on-ink-muted); }
-.hero .hero-assurances li::before { background: rgba(197, 164, 109, .18); color: var(--gold); }
-.hero .ledger { border-color: rgba(197, 164, 109, .35); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .55); }
-.hero .deadline-chip { background: var(--card); color: var(--ink); border: 1px solid rgba(197, 164, 109, .45); }
-.hero .deadline-chip strong { color: var(--accent); }
-.hero .deadline-chip:hover { background: #fff; color: var(--ink); }
-.hero .highlights { border-top-color: rgba(197, 164, 109, .4); border-bottom-color: rgba(255, 255, 255, .12); }
-.hero .highlights li { border-color: rgba(255, 255, 255, .12); }
-.hero .highlights strong { color: #fbf8f2; }
-.hero .highlights span { color: var(--on-ink-muted); }
-.hero .hl-icon { background: rgba(197, 164, 109, .14); }
-.hero .hl-icon svg { stroke: var(--gold); }
 
-/* Ledger card: refined lines */
-.ledger-head { border-bottom: 1px solid var(--ink); }
-.stamp { border-color: var(--gold-dark); color: var(--accent); }
+/* Oversized editorial serif headings */
+h1, h2 { font-weight: 400; letter-spacing: -.02em; }
+h1 { font-size: clamp(3.1rem, 7vw + .4rem, 6.4rem); line-height: .96; }
+h2 { font-size: clamp(2.3rem, 3.4vw + .9rem, 3.9rem); line-height: 1; }
+.svc-top h3, .who-card h3, .tc-checklist h3, .founder-copy h3, .step-title, .form-success h3 { font-weight: 400; letter-spacing: -.01em; }
+.who-card h3, .tc-checklist h3 { font-size: 1.6rem; }
+.svc-top h3 { font-size: clamp(1.8rem, 1.5vw + 1.2rem, 2.4rem); }
+.founder-copy h3 { font-size: clamp(2.2rem, 2vw + 1.4rem, 3rem); }
+.step-title, .form-success h3 { font-size: 2rem; }
+.svc-name, .highlights strong { font-family: var(--font-body); font-weight: 600; letter-spacing: 0; }
+.logo-text { font-weight: 400; font-size: 1.65rem; letter-spacing: -.01em; }
+.logo-mark, .logo-light .logo-mark { border-radius: 0; background: var(--accent); color: #fff; font-family: var(--font-body); font-weight: 600; font-size: .82rem; letter-spacing: .06em; }
+.cd-days, .founder-initials { font-weight: 400; }
+.hl { background: none; font-style: italic; color: var(--gold-dark); animation: none; }
 
-/* Cards: softer, rounder, fintech feel */
-.card, .who-card, .svc-panel, .intake-card, .founder { border-radius: 18px; }
-.who-card:hover { border-top-color: var(--gold); }
+/* Magazine-style labels and section rules */
+.eyebrow { font-family: var(--font-mono); font-weight: 500; letter-spacing: .14em; color: var(--gold-dark); }
+.eyebrow-dot { width: 32px; height: 1px; border-radius: 0; background: var(--text); box-shadow: none; }
+.section-head { border-top: 1px solid var(--text); padding-top: 1.25rem; max-width: none; }
+.section-head > h2, .section-head > p { max-width: 760px; }
 
-/* Dark accents use champagne gold */
-.scroll-progress span, .progress-fill { background: linear-gradient(90deg, var(--gold-dark), var(--gold)); }
-.site-nav a:not(.btn)::after { background: var(--gold); }
-.timeline::after, .timeline::before { background: var(--gold); }
-.success-icon { background: var(--gold); color: var(--ink); }
-.hero .ledger, .hero .persona-result { color: var(--text); }
-.hero .persona legend { color: var(--on-ink-muted); }
-.hero .persona-options span { background: transparent; color: var(--on-ink); border-color: rgba(255, 255, 255, .28); }
-.hero .persona-options span:hover { border-color: var(--gold); }
-.hero .persona-options input:checked + span { background: var(--gold); border-color: var(--gold); color: var(--ink); }
-.hero .persona-result { border-left-color: var(--gold); }
+/* Square corporate buttons */
+.btn { border-radius: 0; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-dark); color: #fff; box-shadow: none; }
+
+/* Clean header and hero, ruled like a broadsheet */
+.site-header { background: rgba(250, 248, 243, .95); border-bottom: 1px solid var(--text); }
+.hero { background: var(--paper); border-bottom: 1px solid var(--text); }
+.site-nav a:not(.btn)::after { height: 1px; border-radius: 0; background: var(--text); }
+.nav-toggle { border-radius: 0; }
+
+/* Flat, gridded cards */
+.card, .svc-panel, .who-card, .intake-card, .founder, .ledger { border-radius: 0; box-shadow: none; }
+.ledger { transform: none; border-color: var(--text); }
+.hero-visual:hover .ledger { transform: none; }
+.ledger-head { border-bottom-width: 1px; }
+.intake-card, .founder { border-color: var(--text); }
+.who-card { border-top: 3px solid var(--accent); }
+.who-card:hover { transform: none; box-shadow: none; border-top-color: var(--gold); }
+.ledger-type, .chips li, .svc-link, .persona-options span, .choice span, .deadline-chip, .persona-result, .segmented, .segmented-thumb, .segmented [role="tab"] { border-radius: 0; }
+.svc-icon, .hl-icon { border-radius: 0; }
+.svc-icon { background: var(--accent); }
+.ledger-paper { background: var(--paper-2); }
+.founder-photo { border-radius: 0; box-shadow: 12px 12px 0 var(--paper-2); }
+.stamp { border-radius: 0; }
+.scroll-progress span { background: var(--text); }
+.progress-fill { background: var(--accent); }
+.timeline::after, .timeline::before { background: var(--accent); }

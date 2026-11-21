@@ -2,7 +2,7 @@
 
 A responsive website for **JRishiCPAs**, an online Canadian tax and accounting firm founded by Jatin Rishi. It is a static site with plain HTML, CSS and a little vanilla JavaScript: no build step and no dependencies apart from Google Fonts.
 
-Live site (GitHub Pages): <https://jatinrishi5.github.io/Test/>
+Live site (GitHub Pages): <https://jatinrishi5.github.io/Test-6/>
 
 ## Viewing the site
 
