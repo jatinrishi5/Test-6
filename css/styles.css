@@ -45,7 +45,7 @@ em { font-style: italic; color: var(--bronze); }
 .wordmark { display: block; padding: 1.4rem 0 .2rem; text-align: center; font-family: var(--font-display); font-weight: 300; font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1; letter-spacing: -.03em; color: var(--ink); text-decoration: none; }
 .wordmark span, .mini-mark span, .foot-mark span { font-style: italic; color: var(--bronze); }
 .mast-tag { margin: 0; padding: .4rem 0 1rem; text-align: center; font-family: var(--font-mono); font-size: .72rem; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
-@media (max-width: 700px) { .mast-mid { display: none; } .mast-strip span:last-child { display: none; } }
+@media (max-width: 700px) { .mast-strip span:last-child { display: none; } }
 
 /* ---------- Sticky nav ---------- */
 .site-header { position: sticky; top: 0; z-index: 100; background: var(--bg); border-top: 3px double var(--ink); border-bottom: 1px solid var(--ink); }
@@ -74,9 +74,11 @@ em { font-style: italic; color: var(--bronze); }
 .cover-title .line:nth-child(2) { padding-left: 22%; }
 @media (max-width: 640px) { .cover-title .line:nth-child(2) { padding-left: 0; } }
 .cover-title em { font-weight: 300; }
-.cover-title .line { display: block; overflow: hidden; padding-bottom: .06em; }
+/* Each line clips its words for the rise-in; generous top/bottom room (pulled back with
+   negative margins) keeps tall letters and descenders from being cut at this size. */
+.cover-title .line { display: block; overflow: hidden; padding-top: .32em; padding-bottom: .32em; padding-right: .12em; margin-top: -.32em; margin-bottom: -.32em; }
 .cover-title .line > span { display: inline-block; }
-.anim .cover-title .line > span { transform: translateY(105%); animation: rise 1.3s cubic-bezier(.19, 1, .22, 1) forwards; }
+.anim .cover-title .line > span { transform: translateY(180%); animation: rise 1.3s cubic-bezier(.19, 1, .22, 1) forwards; }
 .anim .cover-title .line:nth-child(2) > span { animation-delay: .15s; }
 @keyframes rise { to { transform: none; } }
 .cover-grid { display: grid; grid-template-columns: 5fr 4fr 3fr; gap: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--ink); }
