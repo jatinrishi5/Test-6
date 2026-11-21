@@ -4,6 +4,19 @@
 (function () {
   'use strict';
 
+  // ---------- Cover headline: drop the rise-in clip once the words have landed ----------
+  var title = document.querySelector('.cover-title');
+  if (title) {
+    var spans = title.querySelectorAll('.line > span');
+    var last = spans[spans.length - 1];
+    var reveal = function () { title.classList.add('revealed'); };
+    if (!document.documentElement.classList.contains('anim')) reveal();
+    else {
+      title.addEventListener('animationend', function (e) { if (e.target === last) reveal(); });
+      setTimeout(reveal, 2500); // fallback if the animation event never fires
+    }
+  }
+
   // ---------- Calendar status labels (site.js has already marked past / next) ----------
   Array.prototype.forEach.call(document.querySelectorAll('.dates tbody tr'), function (tr) {
     var cell = tr.querySelector('.status');

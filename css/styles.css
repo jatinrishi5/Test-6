@@ -74,9 +74,11 @@ em { font-style: italic; color: var(--bronze); }
 .cover-title .line:nth-child(2) { padding-left: 22%; }
 @media (max-width: 640px) { .cover-title .line:nth-child(2) { padding-left: 0; } }
 .cover-title em { font-weight: 300; }
-/* Each line clips its words for the rise-in; generous top/bottom room (pulled back with
-   negative margins) keeps tall letters and descenders from being cut at this size. */
-.cover-title .line { display: block; overflow: hidden; padding-top: .32em; padding-bottom: .32em; padding-right: .12em; margin-top: -.32em; margin-bottom: -.32em; }
+/* Room around each line (pulled back with negative margins) for the rise-in clip;
+   after the animation the clip is removed entirely, so no letter is ever cut. */
+.cover-title .line { display: block; padding-top: .32em; padding-bottom: .32em; padding-right: .12em; margin-top: -.32em; margin-bottom: -.32em; }
+/* Clip only while the words rise in; fx.js adds .revealed when the animation ends. */
+.anim .cover-title:not(.revealed) .line { overflow: hidden; }
 .cover-title .line > span { display: inline-block; }
 .anim .cover-title .line > span { transform: translateY(180%); animation: rise 1.3s cubic-bezier(.19, 1, .22, 1) forwards; }
 .anim .cover-title .line:nth-child(2) > span { animation-delay: .15s; }
